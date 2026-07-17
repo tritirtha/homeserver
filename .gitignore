@@ -1,4 +1,6 @@
 .env
 postgres/
 portainer/
+nextcloud/
+config/
 *.sql
