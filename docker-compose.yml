@@ -184,7 +184,7 @@ services:
       - '5000:5000'
     volumes:
       - ${KAVITA_DATA}:/books
-      - ${KAVITA_CONFIG:/kavita/config
+      - ${KAVITA_CONFIG}:/kavita/config
     environment:
       - TZ=${TZ}
     healthcheck:
