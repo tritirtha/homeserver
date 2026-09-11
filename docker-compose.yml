@@ -176,6 +176,23 @@ services:
       - nextcloud-db
       - nextcloud-redis
 
+  kavita:
+    container_name: kavita
+    image: jvmilazz0/kavita:latest
+    restart: unless-stopped
+    ports:
+      - '5000:5000'
+    volumes:
+      - ${KAVITA_DATA}:/books
+      - ${KAVITA_CONFIG:/kavita/config
+    environment:
+      - TZ=${TZ}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 
 volumes:
   model-cache:
