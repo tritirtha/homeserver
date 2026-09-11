@@ -21,7 +21,8 @@ services:
       - ${UPLOAD_LOCATION}:/data
       - /etc/localtime:/etc/localtime:ro
     env_file:
-      - .env
+      - path: .env
+        required: false
     ports:
       - '2283:2283'
     depends_on:
@@ -42,7 +43,9 @@ services:
     volumes:
       - model-cache:/cache
     env_file:
-      - .env
+      - path: .env
+        required: false
+
     restart: unless-stopped
     healthcheck:
       disable: false
