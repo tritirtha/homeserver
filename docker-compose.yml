@@ -20,7 +20,7 @@ services:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
       - ${UPLOAD_LOCATION}:/data
       - /etc/localtime:/etc/localtime:ro
-      - ${EDIT_LIBRARY_PATH}:/mnt/media/edits:ro
+      - ${EDIT_LIBRARY_PATH}:/mnt/storage/media:ro
     env_file:
       - path: .env
         required: false
